@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="stars-background"></div>
+    <div id="particles-js"></div>
 
     <header class="header">
         <nav class="nav container">
@@ -39,10 +39,10 @@
                         Olá, eu sou<br>
                         <span>Samuel de Albuquerque</span>
                     </h1>
+                    <h2 class="sobre__dynamic-text">Eu sou um <span class="typing-text"></span></h2>
                     <p class="sobre__description">
-                        Eu sou um <span class="typing-text"></span> com experiência em criar aplicações web robustas e eficientes...<br>
                         Tenho 21 anos e estou ingressando na área de tecnologia por meio do curso de Engenharia de Software, o que me proporciona uma base sólida em lógica de programação, arquitetura de sistemas e boas práticas de desenvolvimento.
-                        Estou em constante evolução, buscando desafios que me permitam aplicar e expandir meus conhecimentos em desenvolvimento web, banco de dados e metodologias ágeis. Tenho facilidade em aprender novas tecnologias, trabalhar em equipe e contribuir para soluções criativas e escaláveis.
+                        Estou em constante evolução, buscando desafios que me permitam aplicar e expandir meus conhecimentos em desenvolvimento web, banco de dados e metodologias ágeis.
                         Meu objetivo é participar de projetos inovadores que gerem impacto real, colaborando ativamente no ciclo completo de desenvolvimento de software — desde a concepção até a entrega final.
                     </p>
                     <div class="sobre__social">
@@ -64,7 +64,7 @@
 
          <section id="habilidades" class="section container">
             <h2 class="section__title">Habilidades</h2>
-            <p class="section__subtitle">Aqui estão algumas das minhas habilidades nas quais tenho trabalhado nos últimos anos.</p>
+            <p class="section__subtitle">Aqui estão algumas das minhas habilidades nas quais tenho trabalhado nos meus projetos.</p>
 
             <div class="habilidades__container">
                 <div class="habilidades__category-card">
@@ -106,7 +106,6 @@
             <h2 class="section__title">Projetos</h2>
             <div class="projetos__grid">
         
-                <!-- PROJETO 1 -->
                 <div class="projeto__card">
                     <img src="https://cdn.pixabay.com/photo/2020/02/19/07/51/web-4861609_1280.jpg" alt="Imagem do Projeto To-Do List" class="projeto__img">
                     <div class="projeto__content">
@@ -126,7 +125,6 @@
                     </div>
                 </div>
         
-                <!-- PROJETO 2 -->
                 <div class="projeto__card">
                     <img src="https://cdn.pixabay.com/photo/2022/12/09/03/48/data-7644526_1280.jpg" alt="Imagem do Projeto Calculadora" class="projeto__img">
                     <div class="projeto__content">
@@ -174,8 +172,9 @@
         <p>&copy; 2025 Samuel Albuquerque. Construído com paixão.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-    <!-- Botão WhatsApp -->
+    
     <a href="https://wa.me/5567992094760" target="_blank" class="whatsapp-float" aria-label="Fale comigo no WhatsApp">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
     </a>

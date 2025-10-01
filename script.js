@@ -26,28 +26,97 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Fundo de Estrelas em Movimento ---
-    const starsContainer = document.querySelector('.stars-background');
-    if (starsContainer) {
-        const numStars = 80;
-        for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            star.style.left = `${x}px`;
-            star.style.top = `${y}px`;
-            const size = Math.random() * 2 + 1;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            const fallDuration = Math.random() * 15 + 15;
-            const fallDelay = Math.random() * fallDuration;
-            const twinkleDelay = Math.random() * 3;
-            star.style.animationDuration = `3s, ${fallDuration}s`;
-            star.style.animationDelay = `${twinkleDelay}s, ${fallDelay}s`;
-            starsContainer.appendChild(star);
-        }
+    // --- ANIMAÇÃO DE PARTÍCULAS (NOVO) ---
+    if(document.getElementById('particles-js')) {
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
     }
+
 
     // --- EFEITO PARALLAX 3D NA FOTO ---
     const imageWrapper = document.querySelector('.sobre__image-wrapper');
@@ -70,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- EFEITO MÁQUINA DE ESCREVER ---
     const typingTextElement = document.querySelector('.typing-text');
     if (typingTextElement) {
-        const words = ["Desenvolvedor de Software", "Programador Full Stack", "Entusiasta de Tecnologia"];
+        // PALAVRAS ATUALIZADAS CONFORME SOLICITADO
+        const words = ["Desenvolvedor de Software", "Entusiasta de Tecnologia", "Programador"];
         const typingSpeed = 100;
         const deletingSpeed = 50;
         const pauseDuration = 2000;

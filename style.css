@@ -1,6 +1,6 @@
 /* --- RESET E VARIÁVEIS DE COR --- */
 :root {
-    --bg-color: #0b0722; /* Fundo roxo bem escuro */
+    --bg-color: #000000; /* Fundo alterado para preto sólido */
     --card-color: #1c153f; /* Cor dos cards */
     --primary-color: #9370DB; /* Roxo médio para detalhes */
     --accent-color: #a777e3; /* Roxo vibrante para destaques */
@@ -74,8 +74,8 @@ ul {
     width: 100%;
     z-index: 100;
     transition: background-color 0.3s ease;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav {
@@ -152,6 +152,15 @@ ul {
     font-weight: 700;
     color: var(--text-color);
     display: block;
+}
+
+/* NOVO ESTILO PARA O TEXTO DINÂMICO */
+.sobre__dynamic-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-muted-color);
+    margin-bottom: 1.5rem;
+    min-height: 60px; /* Previne pulos de layout */
 }
 
 .sobre__description {
@@ -239,7 +248,7 @@ ul {
     to { transform: rotate(360deg); }
 }
 
-/* --- SEÇÃO HABILIDADES (CORES E ESTILOS CORRIGIDOS) --- */
+/* --- SEÇÃO HABILIDADES --- */
 .section__subtitle {
     text-align: center;
     color: var(--text-muted-color);
@@ -287,7 +296,6 @@ ul {
 }
 
 .skill__item {
-    /* COR DE FUNDO CORRIGIDA */
     background-color: var(--card-color); 
     border: 1px solid rgba(147, 112, 219, 0.2);
     border-radius: 0.5rem;
@@ -303,13 +311,11 @@ ul {
 
 .skill__item i {
     font-size: 2.5rem;
-    /* COR DO ÍCONE CORRIGIDA */
     color: var(--text-color);
 }
 
 .skill__item span {
     font-weight: 500;
-    /* COR DO TEXTO CORRIGIDA */
     color: var(--text-color);
     font-size: 0.9rem;
 }
@@ -394,43 +400,26 @@ ul {
     .sobre__title span {
         font-size: 3rem;
     }
+    .sobre__dynamic-text {
+        font-size: 1.5rem;
+    }
 }
 
-/* --- FUNDO DE ESTRELAS --- */
-.stars-background {
+/* --- FUNDO DE PARTÍCULAS --- */
+#particles-js {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
-.star {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0;
-    animation: twinkle 3s infinite ease-in-out, fall 30s linear infinite;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 0.8; }
-}
-
-@keyframes fall {
-    from { transform: translateY(-20vh); opacity: 0; }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
-    to { transform: translateY(120vh); opacity: 0; }
-}
 
 /* --- EFEITO MÁQUINA DE ESCREVER --- */
 .typing-text {
     color: var(--accent-color);
-    font-weight: 600;
+    font-weight: 700; /* Aumentando o destaque da palavra dinâmica */
 }
 
 .typing-text::after {
